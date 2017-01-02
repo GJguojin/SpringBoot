@@ -1,0 +1,4 @@
+hello $name !</br>
+#foreach($user in $userList)
+	$user.id --- $user.userName ---- $!user.userBirth ---- $!DateTool.format('yyyy-MM-dd HH:mm:ss', $!user.userBirth) ---- $user.userEmail </br> 
+#end

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>测试页面</title>
+</head>
+<body>
+    <p>登录人：<span th:text="${session.currentUser.realName}"></span></p>
+	<table class="box-table-a" border="1px">
+		<caption>thyMeleaf使用教程</caption>
+		<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">姓名</th>
+				<th scope="col">出生年月</th>
+				<th scope="col">邮箱</th>
+				<th scope="col">账号</th>
+				<th scope="col">密码</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="u:${userList}">
+				<td th:text="${u.id}">1</td>
+				<td th:text="${u.realName}">朱遇平</td>
+				<td th:text="${#calendars.format(u.userBirth,'yyyy-MM-dd')}">2016-01-01</td>
+				<td th:text="${u.userEmail}">222@qq.com</td>
+				<td th:text="${u.userName}">root</td>
+				<td th:text="${u.password}">2222</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
